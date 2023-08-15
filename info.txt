@@ -1,0 +1,48 @@
+✅ ✅ ✅ How to Install - using CLI
+
+👉 https://tailwindcss.com/docs/installation
+
+✅ Create package manager
+npm init --y
+
+✅ Install tailwind
+npm install -D tailwindcss
+
+✅ Create tailwind.config.js file
+npx tailwindcss init
+
+✅ Replace the code of 'tailwind.config.js' by: 
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./src/**/*.{html,js}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+✅ Create 'src' folder and create this file into there: 
+src/input.css
+
+✅ Copy these lines into 'src/input.css'
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+✅ Go to package.json and replace this line: 
+"test": "echo \"Error: no test specified\" && exit 1"
+
+By: 
+"build": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+
+✅ Run this command now: 
+npm run build
+
+It will create this one: 'dist/output.css'
+
+✅ Create an index.html file into 'dist' folder and connect the css:
+<link rel="stylesheet" href="../dist/output.css">
+
+
+
+
